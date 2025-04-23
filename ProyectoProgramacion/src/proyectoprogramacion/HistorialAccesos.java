@@ -10,7 +10,7 @@ public class HistorialAccesos {
         accesos.add(new Acceso(usuario, hora, motivo));
     }
 
-    public void mostrarAccesosOrdenados() { //Método para ordenar la lista según la hora y mostrar cada acceso
+    public void mostrarAccesosOrdenados() { // Método para ordenar la lista según la hora y mostrar cada acceso
         Collections.sort(accesos, Comparator.comparing(Acceso::getHora));
         Iterator<Acceso> it = accesos.iterator();
         while (it.hasNext()) {
@@ -19,7 +19,7 @@ public class HistorialAccesos {
         }
     }
 
-    public void mostrarEstadisticasPorUsuario() {
+    public void mostrarEstadisticasPorUsuario() { // Método que cuenta cuántas veces accedió cada usuario
         Map<String, Integer> conteo = new HashMap<>();
         for (Acceso a : accesos) {
             String usuario = a.getUsuario();
@@ -36,7 +36,7 @@ public class HistorialAccesos {
         }
     }
 
-    public void mostrarEstadisticasPorMotivo() {
+    public void mostrarEstadisticasPorMotivo() { // Método que cuenta cuántas veces se accedió por motivo
         Map<String, Integer> conteo = new HashMap<>();
         for (Acceso a : accesos) {
             String motivo = a.getMotivo();
